@@ -1,0 +1,11 @@
+runtime: python37
+service: example
+instance_class: F1
+
+entrypoint: gunicorn -b :$PORT app:app
+
+handlers:
+- url: .*
+  script: auto
+  secure: always
+

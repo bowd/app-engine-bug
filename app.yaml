@@ -1,0 +1,18 @@
+runtime: python37
+service: default
+instance_class: F1
+
+entrypoint: >
+  gunicorn
+  -b :$PORT
+  --workers 1
+  --threads 2
+  --max-requests 500
+  --max-requests-jitter 55
+  --preload
+  app:app
+
+handlers:
+- url: .*
+  script: auto
+  secure: always
