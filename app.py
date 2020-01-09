@@ -12,5 +12,5 @@ def hello():
     return "Hello World!"
 
 @app.route('/exception')
-def hello():
+def die():
     raise ValueError("this is an error")
