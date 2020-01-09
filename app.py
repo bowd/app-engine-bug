@@ -10,3 +10,7 @@ app = Flask(__name__)
 def hello():
     app.logger.info("This is a test")
     return "Hello World!"
+
+@app.route('/exception')
+def hello():
+    raise ValueError("this is an error")
